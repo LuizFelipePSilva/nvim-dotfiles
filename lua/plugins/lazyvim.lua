@@ -1,13 +1,14 @@
--- lua/plugins/lazyvim.lua
 return {
-  -- LazyVim base e configuração de tema
   {
     "LazyVim/LazyVim",
+    opts = { colorscheme = "gruvbox" },
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
     opts = {
-      colorscheme = "gruvbox",
+      contrast = "hard",
+      transparent_mode = false,
+      italic = { strings = false, comments = true },
     },
   },
-
-  -- Colorscheme a ser usado
-  { "ellisonleao/gruvbox.nvim" },
 }
