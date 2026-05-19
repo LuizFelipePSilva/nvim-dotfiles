@@ -31,5 +31,9 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
 
+-- Melhora performance de rendering
+vim.opt.updatetime = 200
+vim.opt.timeoutlen = 300
+
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
