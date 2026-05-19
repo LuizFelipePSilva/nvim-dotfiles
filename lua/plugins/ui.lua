@@ -7,7 +7,8 @@ return {
     "nvim-lualine/lualine.nvim",
     enabled = false,
   },
-  -- messages, cmdline and the popupmenu
+  { "nvim-mini/mini.statusline", opts = {} },
+  { "folke/snacks.nvim", opts = { dashboard = { enabled = false } } },
   {
     "folke/noice.nvim",
     opts = function(_, opts)
@@ -71,7 +72,7 @@ return {
     },
     opts = {
       options = {
-        mode = "tabs",
+        mode = "buffers",
         show_buffer_close_icons = false,
         show_close_icon = false,
       },
@@ -81,7 +82,7 @@ return {
   -- filename
   {
     "b0o/incline.nvim",
-    dependencies = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "BufReadPre",
     priority = 1200,
     config = function()
@@ -107,7 +108,6 @@ return {
       })
     end,
   },
-  -- LazyGit integration with Telescope
   {
     "kdheepak/lazygit.nvim",
     keys = {
@@ -186,7 +186,7 @@ return {
           group_empty = true,
         },
         filters = {
-          dotfiles = true,
+          dotfiles = false,
           custom = {
             "node_modules/.*",
           },
@@ -202,10 +202,6 @@ return {
           },
         },
       })
-
-      if vim.fn.argc(-1) == 0 then
-        vim.cmd("NvimTreeFocus")
-      end
     end,
   },
 }
